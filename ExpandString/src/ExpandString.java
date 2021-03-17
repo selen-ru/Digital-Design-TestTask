@@ -17,21 +17,21 @@ public class ExpandString {
 	
 	public static void main(String[] args) {
 		
-		System.out.println("Введите строку:");
+		System.out.println("Р’РІРµРґРёС‚Рµ СЃС‚СЂРѕРєСѓ:");
 		
 		Scanner scanner = new Scanner(System.in);
 		String s = scanner.nextLine();
 		   
-		//начальная позиция символа в строке
+		//РЅР°С‡Р°Р»СЊРЅР°СЏ РїРѕР·РёС†РёСЏ СЃРёРјРІРѕР»Р° РІ СЃС‚СЂРѕРєРµ
 		RefInt indx = new RefInt(0); 
 		
         String result = "";
 		
-        // Проверяем строку на валидность и рекурсивно разворачиваем скобки
+        // РџСЂРѕРІРµСЂСЏРµРј СЃС‚СЂРѕРєСѓ РЅР° РІР°Р»РёРґРЅРѕСЃС‚СЊ Рё СЂРµРєСѓСЂСЃРёРІРЅРѕ СЂР°Р·РІРѕСЂР°С‡РёРІР°РµРј СЃРєРѕР±РєРё
         if (isValid(s))
         	result = ExpandBrackets(s, indx);
         else
-        	System.out.println("Строка не соответствует требованиям!");
+        	System.out.println("РЎС‚СЂРѕРєР° РЅРµ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓРµС‚ С‚СЂРµР±РѕРІР°РЅРёСЏРј!");
         
         
         System.out.println(result);
@@ -39,9 +39,9 @@ public class ExpandString {
 	}
 
 	static String ExpandBrackets(String s, RefInt indx) {
-		// результирующая строка
+		// СЂРµР·СѓР»СЊС‚РёСЂСѓСЋС‰Р°СЏ СЃС‚СЂРѕРєР°
 		String st = "";
-		// Переменная для цифр в строке
+		// РџРµСЂРµРјРµРЅРЅР°СЏ РґР»СЏ С†РёС„СЂ РІ СЃС‚СЂРѕРєРµ
 		String digit = "";
 		
 		 for (indx.i = indx.i; indx.i < s.length(); indx.i++)
@@ -71,7 +71,7 @@ public class ExpandString {
 		return st;
 	}
 	
-	// Проверка строки на валидность
+	// РџСЂРѕРІРµСЂРєР° СЃС‚СЂРѕРєРё РЅР° РІР°Р»РёРґРЅРѕСЃС‚СЊ
     static boolean isValid(String s)
     {
         if (!Pattern.matches("^[a-zA-Z0-9\\[\\]]+$", s))
@@ -83,7 +83,7 @@ public class ExpandString {
         return true;
     }
 	
-    // Подсчет количества скобок в строке
+    // РџРѕРґСЃС‡РµС‚ РєРѕР»РёС‡РµСЃС‚РІР° СЃРєРѕР±РѕРє РІ СЃС‚СЂРѕРєРµ
     static int CountSubString(String s, String regex) {
     	
     	int count = 0;
@@ -95,7 +95,7 @@ public class ExpandString {
     	return count;
     }
     
-    // Конвертация строки в число
+    // РљРѕРЅРІРµСЂС‚Р°С†РёСЏ СЃС‚СЂРѕРєРё РІ С‡РёСЃР»Рѕ
 	public static int tryParse(String value, int defaultVal) {
 	    try {
 	        return Integer.parseInt(value);
