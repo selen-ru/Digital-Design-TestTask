@@ -44,30 +44,29 @@ public class ExpandString {
 		// Переменная для цифр в строке
 		String digit = "";
 		
-		 for (indx.i = indx.i; indx.i < s.length(); indx.i++)
-         {
-             if (Character.isDigit(s.toCharArray()[indx.i]))
-             {
-            	 digit = (st == "") ? digit : "";
-                 digit = digit + s.toCharArray()[indx.i];
-                 continue;
-             }
-             else if (s.toCharArray()[indx.i] == '[')
-             {
-            	 indx.i++;
-                 String res = ExpandBrackets(s, indx);
-                 int num = tryParse(digit, 1);
-                 for (int j = 0; j < num; j++)
-                     st += res;
-                 digit = "";
+		for (indx.i = indx.i; indx.i < s.length(); indx.i++){
+		     if (Character.isDigit(s.toCharArray()[indx.i]))
+		     {
+			 digit = (st == "") ? digit : "";
+			 digit = digit + s.toCharArray()[indx.i];
+			 continue;
+		     }
+		     else if (s.toCharArray()[indx.i] == '[')
+		     {
+			 indx.i++;
+			 String res = ExpandBrackets(s, indx);
+			 int num = tryParse(digit, 1);
+			 for (int j = 0; j < num; j++)
+			     st += res;
+			 digit = "";
 
-             }
-             else if (s.toCharArray()[indx.i] == ']')
-                 return st;
-             else
-                 st += s.toCharArray()[indx.i];
-         }
-		
+		     }
+		     else if (s.toCharArray()[indx.i] == ']')
+			 return st;
+		     else
+			 st += s.toCharArray()[indx.i];
+		 }
+
 		return st;
 	}
 	
